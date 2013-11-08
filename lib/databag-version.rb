@@ -19,7 +19,8 @@ module DatabagVersion
       "#{name}_#{version}"
     end
 
-    def process_all(path = 'data_bags')
+    def process_all(quiet = true, path = 'data_bags')
+      @be_quiet = quiet
       Dir.foreach(path) do |dir|
         process_dir("#{path}/#{dir}") unless dir == '.' || dir == '..'
       end if File.exist?(path)
@@ -37,6 +38,8 @@ module DatabagVersion
       path = File.dirname(file)
       name = File.basename(file, '.erb')
       out = "#{path}/#{name}.json"
+
+      puts "Templating data bag item #{path}/#{name}" unless @be_quiet
 
       template = File.read(file)
       template = Erubis::Eruby.new(template)

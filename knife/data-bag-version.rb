@@ -11,7 +11,7 @@ module Dyn
       banner 'knife data bag version'
 
       def run
-        DatabagVersion.process_all
+        DatabagVersion.process_all(false)
       end
     end
 
