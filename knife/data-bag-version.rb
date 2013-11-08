@@ -10,8 +10,14 @@ module Dyn
 
       banner 'knife data bag version'
 
+      option :quiet,
+        :short => "-q",
+        :long => "--quiet",
+        :boolean => "false",
+        :description => "Silence all informational output."
+
       def run
-        DatabagVersion.process_all(false)
+        DatabagVersion.process_all(config[:quiet])
       end
     end
 
