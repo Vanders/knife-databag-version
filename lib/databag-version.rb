@@ -22,7 +22,7 @@ module DatabagVersion
     def process_all(path = 'data_bags')
       Dir.foreach(path) do |dir|
         process_dir("#{path}/#{dir}") unless dir == '.' || dir == '..'
-      end
+      end if File.exist?(path)
     end
 
     private
