@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Kristian Van Der Vliet"]
   s.email       = 'kvandervliet@dyn.com'
   s.homepage    = 'https://github.corp.dyndns.com/kvandervliet/databag-version'
-  s.files       = ["lib/databag-version.rb"]
+  s.files       = ["lib/databag_version.rb"]
   s.executables << 'version-databags'
   s.license     = 'Apache-2.0'
 end
