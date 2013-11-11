@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'databag-version'
+require 'databag_version'
 
 module Dyn
   module Knife
