@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-require "databag-version"
+require "databag_version"
 DatabagVersion.process_all
