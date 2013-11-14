@@ -37,7 +37,9 @@ module DatabagVersion
     def process_file(file)
       path = File.dirname(file)
       name = File.basename(file, '.erb')
-      out = "#{path}/#{name}.json"
+      id = id(name)
+
+      out = "#{path}/#{id}.json"
 
       puts "Templating data bag item #{path}/#{name}" unless @be_quiet
 

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                    = 'databag_version'
-  s.version                 = '1.0.0'
+  s.version                 = '1.1.0'
   s.summary                 = "Create versioned data bag items"
   s.description             = "Processes data bag item templates with Erubis & thor-scmversion to create 'versioned' data bag items."
   s.authors                 = ["Kristian Van Der Vliet"]
