@@ -1,12 +1,17 @@
-Gem::Specification.new do |s|
-  s.name                    = 'knife-data-bag-version'
-  s.version                 = '1.1.0'
-  s.summary                 = "Create versioned data bag items"
-  s.description             = "Processes data bag item templates with Erubis & thor-scmversion to create 'versioned' data bag items."
-  s.authors                 = ["Kristian Van Der Vliet"]
-  s.email                   = 'kvandervliet@dyn.com'
-  s.homepage                = 'https://github.corp.dyndns.com/kvandervliet/databag-version'
-  s.files                   = ["lib/databag_version.rb"]
-  s.license                 = 'Apache-2.0'
-  s.add_runtime_dependency  'thor-scmversion'
+# encoding: utf-8
+
+Gem::Specification.new do |g|
+  g.name                    = 'knife-data-bag-version'
+  g.version                 = '1.1.0'
+  g.summary                 = "Create versioned data bag items"
+  g.description             = "Processes data bag item templates with Erubis & thor-scmversion to create 'versioned' data bag items."
+  g.authors                 = ["Kristian Van Der Vliet"]
+  g.email                   = 'kvandervliet@dyn.com'
+  g.homepage                = 'https://github.corp.dyndns.com/kvandervliet/databag-version'
+  g.license                 = 'Apache-2.0'
+
+  g.files                   = `git ls-files`.split($\)
+  g.executables             = g.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+
+  g.add_runtime_dependency  'thor-scmversion'
 end
