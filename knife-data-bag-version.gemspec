@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |g|
   g.name                    = 'knife-data-bag-version'
-  g.version                 = '1.1.0'
+  g.version                 = IO.read(File.join(File.dirname(__FILE__), "VERSION")) rescue "0.0.1"
   g.summary                 = "Create versioned data bag items"
   g.description             = "Processes data bag item templates with Erubis & thor-scmversion to create 'versioned' data bag items."
   g.authors                 = ["Kristian Van Der Vliet"]
