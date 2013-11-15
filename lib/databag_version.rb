@@ -22,6 +22,9 @@ module DatabagVersion
     def process_all(quiet = true, path = 'data_bags')
       @be_quiet = quiet
       Dir.foreach(path) do |dir|
+        # Skip everything that isn't a sub-directory
+        next unless File.directory?(dir)
+        # Process every sub-directory (but not current & parent, natch)
         process_dir("#{path}/#{dir}") unless dir == '.' || dir == '..'
       end if File.exist?(path)
     end
