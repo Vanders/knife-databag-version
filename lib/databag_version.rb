@@ -23,7 +23,11 @@ module DatabagVersion
       @be_quiet = quiet
       Dir.foreach(path) do |dir|
         # Skip everything that isn't a sub-directory
-        next unless File.directory?(dir)
+        subdir = File.join(path, dir)
+        unless File.directory?(subdir)
+          puts "Skiping #{subdir} (Not a directory)" unless @be_quiet
+          next 
+        end
         # Process every sub-directory (but not current & parent, natch)
         process_dir("#{path}/#{dir}") unless dir == '.' || dir == '..'
       end if File.exist?(path)
